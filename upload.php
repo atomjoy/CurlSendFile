@@ -8,10 +8,13 @@ print_r($_POST);
 print_r($_FILES);
 
 // Allow files with extension
-$allow = ["jpg", "png", "gif", "zip", "pdf"];
+$allow = ["jpg", "png", "gif", "zip", "pdf", "gz"];
 
 // Max file size (bytes)
 $maxsize = 1024 * 1024 * 100; // 100 MB
+
+// Files chmod 0777, 0775, 0755
+$chmod = 0777;
 
 // Upload
 if(!empty($_FILES["file"]["tmp_name"]))
@@ -32,8 +35,8 @@ if(!empty($_FILES["file"]["tmp_name"]))
     $dir = "media/files";
 
     // Create dir
-    mkdir($dir, 0775, true);
-    chmod($dir, 0775);
+    mkdir($dir, $chmod, true);
+    chmod($dir, $chmod);
 
     // New file name path
     $path = $dir . "/" . md5(microtime().uniqid()) . "." . $ext;
@@ -42,9 +45,10 @@ if(!empty($_FILES["file"]["tmp_name"]))
     $ok = move_uploaded_file($_FILES["file"]["tmp_name"], $path);
 
     if($ok){
-      echo $path;
+        chmod($path, $chmod);
+        echo $path;
     }else{
-      echo "Upload file error";
+        echo "Upload file error";
     }
 
   }else{
