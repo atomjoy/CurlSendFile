@@ -1,16 +1,19 @@
 <?php
-// Secure file here
+// Show image from hidden location
 if(!empty($_GET['file']) && file_exists($_GET['file'])){
     // mime
     $mime = mime_content_type($_GET['file']);
     // if image
     if(strpos($mime,"image/") >= 0){
         header('Content-Type: '.$mime);
+        header("Content-Length: " . filesize($_GET['file']));
         readfile($_GET['file']);
         exit;
     }
 }
 // Error file
-header('Content-Type: image/jpeg');
-readfile('img/wolf.jpg');
+$f = "img/wolf.jpg";
+header('Content-Type: ' . mime_content_type($f));
+header("Content-Length: " . filesize($f));
+readfile($f);
 ?>
