@@ -16,6 +16,15 @@ post_max_size = 900M
 ### Send file with curl
 ```php
 <?php
+// Limits
+set_time_limit(0);
+ini_set('memory_limit', -1);
+
+// Errors
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+
 // Import class
 require('CurlSendFile.php');
 
