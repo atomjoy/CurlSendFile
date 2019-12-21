@@ -13,7 +13,7 @@ max_input_vars = 100
 upload_max_filesize = 900M
 post_max_size = 900M
 ```
-
+### Send file with curl
 ```php
 <?php
 // Import class
