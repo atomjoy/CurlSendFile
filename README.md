@@ -1,10 +1,24 @@
 # CurlSendFile Php class
 Send big files with php curl
 
+### Set php.ini
+```bash
+# In php.ini only
+file_uploads = On
+
+# In php.ini or in php.user.ini in local directory
+max_execution_time = 40000
+max_input_time = 40000
+max_input_vars = 100
+upload_max_filesize = 900M
+post_max_size = 900M
+```
+
 ```php
 <?php
 // Import class
 require('CurlSendFile.php');
+
 try
 {
     // Create object
