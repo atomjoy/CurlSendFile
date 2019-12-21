@@ -5,7 +5,7 @@ if(!empty($_GET['file']) && file_exists($_GET['file'])){
     $mime = mime_content_type($_GET['file']);
 
     // If image , video, audio, pdf
-    if(strpos($mime,"image/") >= 0 | strpos($mime,"video/") >= 0 | strpos($mime,"audio/") >= 0 | strpos($mime,"application/pdf") >= 0)
+    if(strpos($mime,"image/") >= 0 || strpos($mime,"video/") >= 0 || strpos($mime,"audio/") >= 0 || strpos($mime,"application/pdf") >= 0)
     {
         header('Content-Type: '.$mime);
         header("Content-Length: " . filesize($_GET['file']));
