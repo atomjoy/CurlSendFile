@@ -3,8 +3,10 @@
 if(!empty($_GET['file']) && file_exists($_GET['file'])){
     // mime
     $mime = mime_content_type($_GET['file']);
-    // if image
-    if(strpos($mime,"image/") >= 0){
+
+    // If image , video, audio, pdf
+    if(strpos($mime,"image/") >= 0 | strpos($mime,"video/") >= 0 | strpos($mime,"audio/") >= 0 | strpos($mime,"application/pdf") >= 0)
+    {
         header('Content-Type: '.$mime);
         header("Content-Length: " . filesize($_GET['file']));
         readfile($_GET['file']);
