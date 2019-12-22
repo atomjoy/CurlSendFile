@@ -1,5 +1,6 @@
 <?php
-echo "<pre>";
+// include('show-errors.php');
+// include('js-cors.php');
 
 // Show post array
 print_r($_POST);
