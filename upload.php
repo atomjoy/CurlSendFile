@@ -3,10 +3,10 @@
 // include('js-cors.php');
 
 // Show post array
-print_r($_POST);
+// print_r($_POST);
 
 // Show files array
-print_r($_FILES);
+// print_r($_FILES);
 
 // Allow files with extension
 $allow = ["jpg", "png", "gif", "zip", "pdf", "gz"];
