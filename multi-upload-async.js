@@ -43,6 +43,7 @@ function sendFile(file)
     var req = new XMLHttpRequest();
     req.open("POST", 'http://localhost/upload.php', true);
     req.withCredentials = true;
+    req.crossDomain = true;
 
     // Disabled when uploading files
     // req.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
