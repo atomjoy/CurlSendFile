@@ -26,7 +26,7 @@ function Files(files)
 
 function sendFile(file)
 {
-    // Upload images only
+    // Upload images
     if (file.type.startsWith('image/'))
     {
         console.log(file.name + " " + file.size + " " + file.type);
