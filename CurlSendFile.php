@@ -16,7 +16,7 @@ class CurlSendFile
      * @param string $form_attr Files array $_FILES['file'] field name: file
      * @return string Json string array
      */
-    function Send($url, $f, $data = [], $timeout = 60, $selfsigned = 1, $form_attr = 'file' ){
+    function Send($url, $f, $data = [], $timeout = 60, $selfsigned = 1, $form_attr = 'file', $token = ""){
         $f = realpath($f);
         // $_POST
         foreach ($data as $k => $v) { $post[$k] = $v; }
@@ -37,6 +37,9 @@ class CurlSendFile
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($ch, CURLOPT_SSLVERSION, 6);
+        }
+        if(!empty($token)){
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: Bearer ".$token));
         }
         $res = curl_exec($ch);
         if(curl_errno($ch)){
