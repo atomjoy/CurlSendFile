@@ -45,6 +45,10 @@ function sendFile(file)
     req.withCredentials = true;
     req.crossDomain = true;
 
+    // Auth header
+    // req.setRequestHeader('Authorization', 'Basic ' + btoa( user + ':' + pass ));
+    // req.setRequestHeader('Authorization', 'Bearer 080042cad6356ad5dc0a720c18b53b8e53d4c274');
+
     // Disabled when uploading files
     // req.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 
