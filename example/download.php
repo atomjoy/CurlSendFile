@@ -1,10 +1,13 @@
 <?php
 // File
 $f = $_GET['file'];
+
 // Speed 1MB/s
 $speed = 1024 * 1024 * 1;
+
 // Timeout
 set_time_limit(0);
+
 // Clean
 @ob_end_clean();
 
