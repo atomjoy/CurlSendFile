@@ -1,5 +1,5 @@
 <?php
-// include('show-errors.php');
+include('show-errors.php');
 // include('js-cors.php');
 
 // Show post array
