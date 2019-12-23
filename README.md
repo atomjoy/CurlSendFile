@@ -57,9 +57,16 @@ catch(Exception $e)
 ```
 
 ### Composer
-Install from command line
+Install from command line (not active)
 ```bash
+# Add
+composer require moovspace/curlsendfile
+
+# Or
+composer require moovspace/curlsendfile:1.0
 composer require moovspace/curlsendfile:stable
+
+# Install, update
 composer update
 
 # If you need to update the autoloader
