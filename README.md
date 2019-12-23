@@ -29,16 +29,21 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 
-// Import class
-require('src/CurlSendFile.php');
+// Import class with composer
+require('vendor/autoload.php');
+use MoovSpace\CurlSendFile\CurlSendFile;
+use \Exception;
+
+// Start session if needed
+// session_start();
 
 try
 {
     // Create object
     $curl = new CurlSendFile();
     
-    // Send single file
-    echo $curl->Send("http://localhost/upload.php", 'img/wolf.jpg', ['id'=>'1234567890']);
+    // Send single file and post array
+    echo $curl->Send("http://localhost/example/upload.php", 'example/img/wolf.jpg', ['my_post_id' => '1234567890', 'name' => 'Curl upload']);
     
     // Params
     $timeout = 60; // Timeout default: 60
@@ -46,7 +51,7 @@ try
     $attr = 'my_file'; // Files form name $_FILES['my_file'] default: file
     
     // Send with custom field name
-    echo $curl->Send("https://localhost/upload.php", 'img/wolf.jpg', ['id'=>'1234567890'], $timeout, $selfsigned, $attr);
+    echo $curl->Send("https://localhost/example/upload.php", 'example/img/wolf.jpg', ['id'=>'1234567890'], $timeout, $selfsigned, $attr);
 }
 catch(Exception $e)
 {
@@ -56,7 +61,7 @@ catch(Exception $e)
 ?>
 ```
 
-### Composer
+### Composer require
 Install from command line (not active)
 ```bash
 # Add
@@ -87,29 +92,4 @@ Install library from composer.json
         "moovspace/curlsendfile": "~1.0"
     }
 }
-```
-### Include composer class autoload in php script
-```php
-<?php
-require('vendor/autoload.php');
-use MoovSpace\CurlSendFile\CurlSendFile;
-use \Exception;
-
-// Start session if needed
-// session_start();
-
-try
-{
-    // Create object
-    $curl = new CurlSendFile();
-
-    // Send single file
-    echo $curl->Send("http://localhost/example/upload.php", 'example/img/wolf.jpg', ['my_post_id' => '1234567890', 'name' => 'Curl upload']);
-}
-catch(Exception $e)
-{
-    echo $e->getMessage();
-    echo $e->getCode();
-}
-?>
 ```
