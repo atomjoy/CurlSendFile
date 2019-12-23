@@ -1,6 +1,8 @@
 /*
+
 <!-- Create input in html -->
 <input type="file" id="input" multiple onchange="Files(this.files)">
+
 */
 
 // Files list
