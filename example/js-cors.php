@@ -1,5 +1,5 @@
 <?php
-// CORS policy, allow js connections from different hosts
+// CORS policy, allow javascript ajax connections from different hosts
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS');
 header('Access-Control-Max-Age: 1728000');
