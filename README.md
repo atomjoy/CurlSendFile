@@ -85,9 +85,24 @@ Install library from composer.json
 ```php
 <?php
 require('vendor/autoload.php');
-
 use MoovSpace\CurlSendFile\CurlSendFile;
 use \Exception;
 
-$curl = new CurlSendFile();
+// Start session if needed
+// session_start();
+
+try
+{
+    // Create object
+    $curl = new CurlSendFile();
+
+    // Send single file
+    echo $curl->Send("http://localhost/example/upload.php", 'example/img/wolf.jpg', ['my_post_id' => '1234567890', 'name' => 'Curl upload']);
+}
+catch(Exception $e)
+{
+    echo $e->getMessage();
+    echo $e->getCode();
+}
 ?>
+```
