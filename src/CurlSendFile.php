@@ -1,4 +1,7 @@
 <?php
+namespace MoovSpace\CurlSendFile;
+use \Exception;
+
 /**
  * CurlSendFile class
  */
@@ -57,8 +60,8 @@ class CurlSendFile
 try
 {
     $curl = new CurlSendFile();
-    echo $curl->Send("https://localhost:4443/upload.php", 'img/wolf.jpg', ['id'=>'1234567890']);
-    echo $curl->Send("https://localhost:4443/upload.php", 'img/firefox.tar.gz', ['id'=>'1234567890']);
+    echo $curl->Send("http://localhost:4443/upload.php", 'img/wolf.jpg', ['id'=>'1234567890']);
+    echo $curl->Send("https://localhost:4443/upload.php", 'img/firefox.tar.gz', ['id'=>'1234567890'], 60, 1, 'file');
 }
 catch(Exception $e)
 {

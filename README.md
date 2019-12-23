@@ -55,3 +55,39 @@ catch(Exception $e)
 }
 ?>
 ```
+
+### Composer
+Install from command line
+```bash
+composer require moovspace/curlsendfile:stable
+composer update
+
+# If you need to update the autoloader
+composer dump-autoload -o
+```
+
+Install library from composer.json
+```json
+{
+    "name": "acme/blog",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/moovspace/curlsendfile"
+        }
+    ],
+    "require": {
+        "moovspace/curlsendfile": "~1.0"
+    }
+}
+```
+### Include composer class autoload in php script
+```php
+<?php
+require('vendor/autoload.php');
+
+use MoovSpace\CurlSendFile\CurlSendFile;
+use \Exception;
+
+$curl = new CurlSendFile();
+?>
