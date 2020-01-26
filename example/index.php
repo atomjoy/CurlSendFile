@@ -5,7 +5,7 @@ require('src/CurlSendFile.php');
 // Or import classes with composer
 //
 // require('vendor\autoload.php');
-// use MoovSpace\CurlSendFile\CurlSendFile;
+// use PhpCurl\CurlSendFile;
 // use \Exception;
 
 // Start session here if needed
