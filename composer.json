@@ -1,8 +1,9 @@
 {
     "name": "moovspace/curlsendfile",
-    "description": "Send big files from php with curl",
+    "description": "Send files from php with curl",
     "type": "library",
     "license": "MIT",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Marcys",
@@ -11,12 +12,15 @@
     ],
     "minimum-stability": "stable",
     "require": {
-	"php": ">=7.3.0",
+	"php": ">=7.3",
 	"ext-curl": "^7.3"
     },
     "autoload": {
         "psr-4": {
-            "MoovSpace\\CurlSendFile\\": "src/"
-        }
+            "PhpCurl\\": "src/"
+        },
+        "classmap": [
+            "src/"
+        ]
     }
 }

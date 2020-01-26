@@ -1,5 +1,5 @@
 <?php
-namespace MoovSpace\CurlSendFile;
+namespace PhpCurl;
 use \Exception;
 
 /**

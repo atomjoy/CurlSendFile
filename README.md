@@ -31,7 +31,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 
 // Import class with composer
 require('vendor/autoload.php');
-use MoovSpace\CurlSendFile\CurlSendFile;
+use PhpCurl\CurlSendFile;
 use \Exception;
 
 // Start session if needed
