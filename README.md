@@ -8,7 +8,7 @@ file_uploads = On
 allow_url_fopen = Off
 allow_url_include = Off
 
-# In php.ini or in php.user.ini in local directory
+# In php.ini or in .user.ini in local directory
 max_execution_time = 40000
 
 max_input_time = 40000
