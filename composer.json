@@ -1,5 +1,5 @@
 {
-    "name": "moovspace/curlsendfile",
+    "name": "atomjoy/curlsendfile",
     "description": "Send files from php with curl",
     "type": "library",
     "license": "MIT",
@@ -7,7 +7,7 @@
     "authors": [
         {
             "name": "Marcys",
-            "email": "moovspace@github.com"
+            "email": "atomjoy.official@github.com"
         }
     ],
     "minimum-stability": "stable",
