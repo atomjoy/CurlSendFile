@@ -65,11 +65,11 @@ catch(Exception $e)
 Install from command line (not active)
 ```bash
 # Add
-composer require moovspace/curlsendfile
+composer require atomjoy/curlsendfile
 
 # Or
-composer require moovspace/curlsendfile:1.0
-composer require moovspace/curlsendfile:stable
+composer require atomjoy/curlsendfile:1.0
+composer require atomjoy/curlsendfile:stable
 
 # Install, update
 composer update
@@ -85,11 +85,11 @@ Install library from composer.json
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/moovspace/curlsendfile"
+            "url": "https://github.com/atomjoy/curlsendfile"
         }
     ],
     "require": {
-        "moovspace/curlsendfile": "~1.0"
+        "atomjoy/curlsendfile": "~1.0"
     }
 }
 ```
